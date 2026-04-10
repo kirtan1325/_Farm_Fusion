@@ -129,7 +129,7 @@ function ActionsCell({ status, onAccept, onReject, onNegotiate, accepting, rejec
 
 
 // ── Main Component ──────────────────────────────────────
-export default function RequestManagement() {
+export default function Requestmanagement() {
   const { user, logout } = useAuth();
   const navigate = useNavigate();
 
