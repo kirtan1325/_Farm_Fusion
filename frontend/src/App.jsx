@@ -14,7 +14,7 @@ import OAuthCallback    from "./pages/OAuthCallback";
 
 // ── Farmer pages ──────────────────────────────────────
 import FarmerDashboard   from "./pages/FarmerDashboard";
-import Requestmanagement from "./pages/Requestmanagement";
+import RequestManagement from "./pages/Requestmanagement";
 import InventoryTracker  from "./pages/InventoryTracker";
 import SoilHealthCard    from "./pages/SoilHealthCard";
 
