@@ -7,8 +7,6 @@ import os
 
 PORT = int(os.environ.get("PORT", 5000))
 app = Flask(__name__)
-app.run(host="0.0.0.0", port=PORT)
-
 CORS(app)
 CROP_RULES = {
     ("Loamy", "Kharif"): {"crop": "Rice", "fert": "Urea & NPK 10-26-26", "irrig": "Continuous flooding / Every 3 days"},
@@ -157,4 +155,5 @@ def voice_assistant():
     })
 
 if __name__ == '__main__':
-    app.run(port=5001, debug=True)
+    app.run(host="0.0.0.0", port=PORT, debug=True)
+
