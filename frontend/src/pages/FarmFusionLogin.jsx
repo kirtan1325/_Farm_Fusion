@@ -171,7 +171,7 @@ export default function FarmFusionLogin() {
   };
 
   // OAuth — redirect browser to backend which handles the full OAuth flow
-  const BACKEND = "http://localhost:5000";
+  const BACKEND = import.meta.env.VITE_API_URL;
   const handleGoogle   = () => { window.location.href = `${BACKEND}/api/auth/google`; };
   const handleFacebook = () => { window.location.href = `${BACKEND}/api/auth/facebook`; };
 

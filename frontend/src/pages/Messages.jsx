@@ -62,7 +62,7 @@ export default function Messages() {
     if (!activeRequest) return;
     setLoadingMessages(true);
     try {
-      const { data } = await axios.get(`http://localhost:5000/api/messages/${activeRequest._id}`, {
+      const { data } = await axios.get(`${import.meta.env.VITE_API_URL}/api/messages/${activeRequest._id}`, {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
       });
       setMessages(data.data || []);
@@ -87,7 +87,7 @@ export default function Messages() {
 
     try {
       const recipientId = isFarmer ? activeRequest.buyer._id : activeRequest.farmer._id;
-      const { data } = await axios.post("http://localhost:5000/api/messages", {
+      const { data } = await axios.post(`${import.meta.env.VITE_API_URL}/api/messages`, {
         requestId: activeRequest._id,
         recipientId,
         text: text

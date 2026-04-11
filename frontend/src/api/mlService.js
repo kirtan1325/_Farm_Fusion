@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const ML_API_URL = "http://localhost:5001";
+const ML_API_URL = import.meta.env.VITE_ML_API_URL;
 
 export const predictCrop = async (data) => {
   const response = await axios.post(`${ML_API_URL}/predict-crop`, data);
