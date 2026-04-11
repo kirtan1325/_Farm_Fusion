@@ -18,7 +18,19 @@ function initSocket(httpServer) {
   const { Server } = require("socket.io");
   io = new Server(httpServer, {
     cors: {
-      origin: process.env.CLIENT_URL || "http://localhost:3000",
+      origin: function (origin, callback) {
+        if (!origin) return callback(null, true);
+        const allowed = [
+          process.env.CLIENT_URL,
+          "https://farm-fusion-eta.vercel.app",
+          "http://localhost:3000",
+          "http://localhost:5173",
+        ].filter(Boolean);
+        if (allowed.includes(origin) || origin.endsWith(".vercel.app")) {
+          return callback(null, true);
+        }
+        callback(new Error("Not allowed by CORS"));
+      },
       methods: ["GET", "POST"],
       credentials: true,
     },
