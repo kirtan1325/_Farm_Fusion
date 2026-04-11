@@ -85,7 +85,7 @@ export default function GovernmentSchemes() {
                 const cat = document.getElementById("schemeCategory").value;
                 setLoading(true);
                 try {
-                  const res = await fetch(`${import.meta.env.VITE_API_URL}/api/schemes/check-eligibility`, {
+                  const res = await fetch(`${import.meta.env.VITE_API_URL || "https://farm-fusion-4.onrender.com"}/api/schemes/check-eligibility`, {
                     method: "POST",
                     headers: { "Content-Type": "application/json", Authorization: `Bearer ${localStorage.getItem("token")}` },
                     body: JSON.stringify({ landSize, cropType, category: cat })

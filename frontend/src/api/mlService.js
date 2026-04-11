@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const ML_API_URL = import.meta.env.VITE_ML_API_URL;
+const ML_API_URL = import.meta.env.VITE_ML_API_URL || "https://farm-fusion-5.onrender.com";
 
 export const predictCrop = async (data) => {
   const response = await axios.post(`${ML_API_URL}/predict-crop`, data);

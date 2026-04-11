@@ -5,7 +5,7 @@ import { useAuth } from "./AuthContext";
 
 const SocketContext = createContext(null);
 
-const SOCKET_URL = import.meta.env.VITE_API_URL;
+const SOCKET_URL = import.meta.env.VITE_API_URL || "https://farm-fusion-4.onrender.com";
 
 export function SocketProvider({ children }) {
   const { token } = useAuth();

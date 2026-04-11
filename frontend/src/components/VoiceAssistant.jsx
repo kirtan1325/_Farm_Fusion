@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import axios from "axios";
 
-const ML_API_URL = import.meta.env.VITE_ML_API_URL;
+const ML_API_URL = import.meta.env.VITE_ML_API_URL || "https://farm-fusion-5.onrender.com";
 
 export default function VoiceAssistant() {
   const [isOpen, setIsOpen] = useState(false);
